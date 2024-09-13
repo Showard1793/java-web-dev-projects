@@ -22,6 +22,8 @@ public class Main {
         char[] charactersInString = myString.toCharArray();
 
         for (char value : charactersInString) {
+
+
             if (characterCount.containsKey(value)) {
                 characterCount.put(value, characterCount.get(value) + 1);
             }
@@ -29,6 +31,7 @@ public class Main {
                 characterCount.put(value, 1);
             }
         }
+
         System.out.println("Here is your hash map: " + characterCount);
     }
 }
