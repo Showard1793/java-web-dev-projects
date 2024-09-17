@@ -23,6 +23,7 @@ public class Main {
 
         System.out.println(cheesburger.getDescription());
         menu1.displayMenu();
+        System.out.println(menu1.menuLastUpdatedMessage());
 
     }
 }

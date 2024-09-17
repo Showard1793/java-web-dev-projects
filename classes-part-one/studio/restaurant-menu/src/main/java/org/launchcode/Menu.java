@@ -10,6 +10,13 @@ public class Menu {
 
 //Menu Methods
 
+    public String menuLastUpdatedMessage() {
+        if (menuLastUpdate == null) {
+            return "The menu has not been updated yet.";
+        }
+        return "This menu was last updated: " + menuLastUpdate;
+    }
+
     //Add menuItem to menu
     public void addMenuItem(MenuItem item) {
         menu.add(item);
@@ -22,13 +29,11 @@ public class Menu {
         for (MenuItem menuItem : menu) {
             System.out.println(menuItem.printMenuItem());
         }
+
     }
 }
 
-//Does Not Work!
-public String menuLastUpdatedMessage (MenuItem item){
-    return "" + menuLastUpdate;
-}
+
 
 
 

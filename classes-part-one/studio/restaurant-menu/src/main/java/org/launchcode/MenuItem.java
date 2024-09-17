@@ -86,6 +86,6 @@ public class MenuItem {
     }
 
     public String printMenuItem(){
-        return (this.name + ":" + this.description + "---" + this.price);
+        return (this.name + ": " + this.description + "---" + this.price);
     }
 }
