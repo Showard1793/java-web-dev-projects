@@ -10,6 +10,7 @@ public class Menu {
 
 //Menu Methods
 
+    //give menu last updated message
     public String menuLastUpdatedMessage() {
         if (menuLastUpdate == null) {
             return "The menu has not been updated yet.";
@@ -23,9 +24,8 @@ public class Menu {
         menuLastUpdate = LocalDate.now();
     }
 
-
+    //display the full menu
     public void displayMenu() {
-        //for (int i = 0; i < this.menu.size(); i++) {
         for (MenuItem menuItem : menu) {
             System.out.println(menuItem.printMenuItem());
         }
