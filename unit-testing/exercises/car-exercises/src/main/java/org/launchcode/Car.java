@@ -68,6 +68,8 @@ public class Car {
      *
      * @param miles - the miles to drive
      */
+
+    //Drive given miles method
     public void drive(double miles)
     {
         //adjust fuel based on mpg and miles requested to drive
@@ -84,4 +86,11 @@ public class Car {
         this.odometer += milesAbleToTravel;
     }
 
+    //Add Gas to car method
+    public void addGas(double gas) {
+        this.setGasTankLevel(gas + this.getGasTankLevel());
+        if (this.gasTankSize < gas + this.getGasTankLevel()) {
+            throw new IllegalArgumentException("Shouldn't get here, car cannot have more gas in tank than the size of the tank");
+        } else System.out.println(this.gasTankLevel);
+    }
 }

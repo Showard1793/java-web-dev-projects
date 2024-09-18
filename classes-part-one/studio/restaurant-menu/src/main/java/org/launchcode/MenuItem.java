@@ -2,6 +2,7 @@ package org.launchcode;
 
 import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class MenuItem {
 
@@ -38,9 +39,7 @@ public class MenuItem {
     }
 
 
-    //MenuItem Methods (getters and setters)
-
-
+    //Getters and Setters
     public String getName() {
         return name;
     }
@@ -85,6 +84,15 @@ public class MenuItem {
         this.updateDate = updateDate;
     }
 
+//INSTANCE METHODS
+    //Is the Item New?
+    public boolean isNew(){
+        LocalDate today = LocalDate.now();
+        double daysBetween = getUpdateDate().until(today, ChronoUnit.DAYS);
+        return daysBetween < 90;
+    }
+
+    //Format the menu
     public String printMenuItem(){
         return (this.name + ": " + this.description + "---" + this.price);
     }
