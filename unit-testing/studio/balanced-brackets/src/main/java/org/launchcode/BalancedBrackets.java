@@ -1,4 +1,7 @@
 package org.launchcode;
+
+import java.util.Objects;
+
 public class BalancedBrackets {
     /*
      * The function BalancedBrackets should return true if and only if
@@ -21,8 +24,14 @@ public class BalancedBrackets {
      */
     public static boolean hasBalancedBrackets(String str) {
         int brackets = 0;
+        if (Objects.equals(str, "")){
+            return true;
+        }
         for (char ch : str.toCharArray()) {
-            if (ch == '[') {
+            if (brackets == -1) {
+                return false;
+            }
+            else if (ch == '[') {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
